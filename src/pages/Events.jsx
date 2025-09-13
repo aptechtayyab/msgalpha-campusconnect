@@ -211,7 +211,7 @@ export default function Events() {
                 </div>
 
                 <div className="ev-actions">
-                  <a className="btn tiny" href={`/events/${ev.id}`}>Learn More</a>
+                  <a className="btn tiny" href={`/eventdetails/${ev.id}`}>Learn More</a>
                 </div>
               </article>
             );
