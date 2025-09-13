@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Muhammad Ashar",
+    "role": "CSE • Coding Club",
+    "quote": "TechFest made it super easy to discover hackathons and register.",
+    "avatar": "/images/profile-pic.png"
+  },
+  {
+    "id": 2,
+    "name": "Afraz Khan",
+    "role": "ECE • Robotics",
+    "quote": "Reminders helped our whole team make it on time!",
+    "avatar": "/images/profile-pic-four.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Sajid Ali",
+    "role": "ME • Sports",
+    "quote": "Sports Gala brought the entire campus together.",
+    "avatar": "/images/profile-pic-three.png"
+  }
+]

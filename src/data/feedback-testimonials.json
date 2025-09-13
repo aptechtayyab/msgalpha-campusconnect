@@ -1,0 +1,66 @@
+[
+  {
+    "name": "M. Ashar",
+    "role": "CS Student",
+    "company": "Nitro",
+    "logo": "/images/cultural-week.png",
+    "quote": "The Data Science workshop was incredibly practical and well-paced.",
+    "avatar": "/images/profile-pic.png"
+  },
+  {
+    "name": "Afraz Khan",
+    "role": "Media Arts",
+    "company": "PagerDuty",
+    "logo": "/images/brands/pagerduty.svg",
+    "quote": "Loved the photography walk — great tips and a friendly vibe!",
+    "avatar": "/images/profile-pic-two.jpeg"
+  },
+  {
+    "name": "Sajid Raza",
+    "role": "Alumni",
+    "company": "Lucid",
+    "logo": "/images/brands/lucid.svg",
+    "quote": "Campus events are getting better every year. Kudos to the team!",
+    "avatar": "/images/profile-pic-three.png"
+  },
+  {
+    "name": "Tayyab",
+    "role": "Faculty",
+    "company": "Orbit",
+    "logo": "/images/brands/orbit.svg",
+    "quote": "Smooth coordination and excellent student engagement throughout.",
+    "avatar": "/images/profile-pic.png"
+  },
+  {
+    "name": "Bilal T.",
+    "role": "Guest",
+    "company": "BrightLabs",
+    "logo": "/images/brands/brightlabs.svg",
+    "quote": "The cultural week was vibrant and well organized.",
+    "avatar": "/images/profile-pic.png"
+  },
+  {
+    "name": "Iqra S.",
+    "role": "EE Student",
+    "company": "Volt",
+    "logo": "/images/brands/volt.svg",
+    "quote": "Project exhibit had brilliant ideas and demos. Very inspiring.",
+    "avatar": "/images/profile-pic.png"
+  },
+  {
+    "name": "Hamza A.",
+    "role": "PE Dept",
+    "company": "Athletica",
+    "logo": "/images/brands/athletica.svg",
+    "quote": "Sports fixtures were on-time with great participation.",
+    "avatar": "/images/profile-pic.png"
+  },
+  {
+    "name": "Maria Z.",
+    "role": "AI & DS",
+    "company": "Neura",
+    "logo": "/images/brands/neura.svg",
+    "quote": "GenAI workshop was a perfect intro — hands-on and fun.",
+    "avatar": "/images/profile-pic.png"
+  }
+]

@@ -1,0 +1,116 @@
+.upcoming-events {
+  padding: 40px 20px;
+  background: #f9fafb;
+}
+
+.upcoming-events h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #2d3748;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.controls input,
+.controls select {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.controls input:focus,
+.controls select:focus {
+  border-color: #63b3ed;
+  box-shadow: 0 0 0 2px rgba(99, 179, 237, 0.4);
+}
+
+/* Event Grid */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.event-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+.event-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 16px;
+}
+
+.event-card h3 {
+  color: #2d3748;
+  margin-bottom: 8px;
+}
+
+.event-card .date {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 6px;
+}
+
+.event-card .meta {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  font-size: 0.95rem;
+  color: #2d3748;
+}
+
+.countdown {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #e53e3e;
+  margin: 10px 0;
+}
+
+.btn-learn {
+  display: inline-block;
+  padding: 8px 14px;
+  background: #3182ce;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.btn-learn:hover {
+  background: #2b6cb0;
+}
+
+.no-events {
+  text-align: center;
+  color: #718096;
+  font-style: italic;
+}

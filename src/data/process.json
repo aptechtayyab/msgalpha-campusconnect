@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "step": "Step 1",
+    "title": "Locate & Define Needs",
+    "text": "Identify purpose, audience, and scope of the event by gathering inputs from students, clubs, and faculty.",
+    "icon": "📣"
+  },
+  {
+    "id": 2,
+    "step": "Step 2",
+    "title": "Research & Data",
+    "text": "Review possible venues, confirm dates, set budgets, and shortlist speakers, judges, and volunteers.",
+    "icon": "🔎"
+  },
+  {
+    "id": 3,
+    "step": "Step 3",
+    "title": "Program Design",
+    "text": "Draft the agenda, plan registrations, prepare rubrics and safety lists, and align tasks with organizers.",
+    "icon": "📋"
+  },
+  {
+    "id": 4,
+    "step": "Step 4",
+    "title": "Finalize & Communicate",
+    "text": "Confirm logistics, coordinate with advisors, launch publicity, and finalize sponsorships if required.",
+    "icon": "📣"
+  },
+  {
+    "id": 5,
+    "step": "Step 5",
+    "title": "Report & Showcase",
+    "text": "Publish results and photos, highlight achievements, share learnings, and plan improvements for future.",
+    "icon": "📝"
+  }
+]

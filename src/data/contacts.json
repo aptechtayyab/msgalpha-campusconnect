@@ -1,0 +1,23 @@
+[
+  {
+    "id": "c-1",
+    "name": "Student Council",
+    "email": "council@college.edu",
+    "phone": "+1234567890",
+    "role": "Coordinator"
+  },
+  {
+    "id": "c-2",
+    "name": "AI Club",
+    "email": "aiclub@college.edu",
+    "phone": "+1234567891",
+    "role": "Club Lead"
+  },
+  {
+    "id": "c-3",
+    "name": "Sports Council",
+    "email": "sports@college.edu",
+    "phone": "+1234567892",
+    "role": "Sports Coordinator"
+  }
+]

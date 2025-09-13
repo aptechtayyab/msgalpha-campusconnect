@@ -1,0 +1,1 @@
+Place your images in public/assets/images/ and update JSON paths accordingly.

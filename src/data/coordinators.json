@@ -1,0 +1,60 @@
+{
+  "faculty": [
+    {
+      "id": "f-1",
+      "name": "Dr. Sara Ahmed",
+      "designation": "HOD, Computer Science",
+      "department": "Computer Science",
+      "email": "sara.ahmed@college.edu",
+      "phone": "+92 21 33445566",
+      "avatar": "/images/profile-pic-four.jpg"
+    },
+    {
+      "id": "f-2",
+      "name": "Prof. Kamran Ali",
+      "designation": "Dean, Student Affairs",
+      "department": "Administration",
+      "email": "kamran.ali@college.edu",
+      "phone": "+92 21 99887766",
+      "avatar": "/images/profile-pic.png"
+    },
+    {
+      "id": "f-3",
+      "name": "Dr. Rabia Hasan",
+      "designation": "Coordinator, Cultural Committee",
+      "department": "Arts",
+      "email": "rabia.hasan@college.edu",
+      "phone": "+92 300 1112233",
+      "avatar": "/images/profile-pic-three.png"
+    }
+  ],
+  "students": [
+    {
+      "id": "s-1",
+      "name": "Ahsan Raza",
+      "designation": "Lead Coordinator",
+      "department": "Computer Science",
+      "email": "ahsan.raza@students.college.edu",
+      "phone": "+92 300 2223344",
+      "avatar": "/images/profile-pic.png"
+    },
+    {
+      "id": "s-2",
+      "name": "Mehak Noor",
+      "designation": "Event Coordinator",
+      "department": "Arts",
+      "email": "mehak.noor@students.college.edu",
+      "phone": "+92 301 4455667",
+      "avatar": "/images/profile-pic-three.png"
+    },
+    {
+      "id": "s-3",
+      "name": "Hassan Iqbal",
+      "designation": "Sports Coordinator",
+      "department": "Physical Education",
+      "email": "hassan.iqbal@students.college.edu",
+      "phone": "+92 302 7788990",
+      "avatar": "/images/profile-pic-four.jpg"
+    }
+  ]
+}

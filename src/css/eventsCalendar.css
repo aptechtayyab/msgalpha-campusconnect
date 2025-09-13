@@ -1,0 +1,185 @@
+.about-page .calcards-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.about-page .calcards-title { margin: 0; }
+
+.about-page .year-select-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-page .year-select {
+  appearance: none;
+  padding: 8px 12px;
+  border: 1px solid var(--lineL);
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.about-page .calcards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+  align-items: start;
+}
+
+.about-page .cal-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 12px;
+  min-height: 520px;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.18), 0 3px 10px rgba(0,0,0,0.12);
+  transition: transform .18s ease, box-shadow .18s ease;
+  overflow: hidden;
+}
+.about-page .cal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 44px rgba(0,0,0,0.22), 0 6px 16px rgba(0,0,0,0.14);
+  z-index: 1;
+}
+
+.about-page .cal-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 4px;
+  min-width: 0;
+}
+
+.about-page .cal-card__month { font-weight: 800; }
+
+.about-page .cal-card__year {
+  color: #6b7280;
+  font-weight: 700;
+  font-size: .95rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.about-page .cal-card__grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;               /* tightened gap */
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.about-page .cal-card__grid--labels {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-page .cal-card__grid--labels span {
+  text-align: center;
+  font-size: .8rem;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.about-page .cal-cell {
+  aspect-ratio: 1 / 1;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  background: #fafafa;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.about-page .cal-cell--event {
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05), 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.about-page .cal-cell--empty {
+  background: transparent;
+  border-color: transparent;
+}
+
+.about-page .cal-card__legend {
+  margin-top: 2px;
+  min-height: 64px;
+  max-height: 88px;
+  overflow: auto;
+}
+
+.about-page .legend-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+  text-align: left;
+}
+
+.about-page .legend-list li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.25;
+}
+
+.about-page .legend-list .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #FEBF08;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .08);
+}
+
+.about-page .legend-list .legend-text {
+  font-size: .92rem;
+  color: #374151;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+  .about-page .cal-card { min-height: 500px; }
+  .about-page .calcards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-page .cal-card { min-height: 480px; }
+  .about-page .cal-card__legend { min-height: 56px; max-height: 80px; }
+  .about-page .calcards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+  .about-page .cal-card__year { font-size: .9rem; }
+}
+
+@media (max-width: 600px) {
+  .about-page .cal-card { min-height: 440px; padding: 14px; }
+  .about-page .calcards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+  }
+  .about-page .cal-card__grid--labels span { font-size: .75rem; }
+  .about-page .cal-cell { font-size: .8rem; }
+}

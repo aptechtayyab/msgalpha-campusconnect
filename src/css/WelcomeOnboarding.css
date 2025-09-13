@@ -1,0 +1,324 @@
+:root {
+    --indigo: #4f46e5;
+    --blue: #3b82f6;
+    --blue-200: #bfdbfe;
+    --blue-100: #dbeafe;
+    --slate-900: #0f172a;
+    --slate-700: #374151;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-300: #cbd5e1;
+    --bg-overlay: rgba(3, 6, 23, 0.55);
+    --cta: #ff6600;
+    --frost-bg: rgba(34, 34, 34, 0.60);
+    --frost-br: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.wo2-overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(1100px 600px at 10% -10%, rgba(79, 70, 229, 0.18), transparent 60%),
+        radial-gradient(1100px 600px at 110% 110%, rgba(59, 130, 246, 0.16), transparent 60%),
+        var(--bg-overlay);
+    backdrop-filter: blur(2px);
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    padding: 12px;
+}
+
+.wo2-glow {
+    position: absolute;
+    width: 40vmax;
+    height: 40vmax;
+    filter: blur(36px);
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.wo2-glow.tl {
+    top: -20vmax;
+    left: -10vmax;
+    background: radial-gradient(closest-side, var(--indigo), transparent);
+}
+
+.wo2-glow.br {
+    bottom: -20vmax;
+    right: -10vmax;
+    background: radial-gradient(closest-side, var(--blue), transparent);
+}
+
+.wo2-dialog {
+    position: relative;
+    width: min(760px, 94vw);
+    border-radius: 20px;
+    background: var(--frost-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--frost-br);
+    box-shadow: 0 30px 80px rgba(2, 6, 23, 0.28);
+    overflow: clip;
+    outline: none;
+    color: #f8fafc;
+}
+
+.wo2-in {
+    animation: wo2-pop 420ms cubic-bezier(.21, 1.02, .73, 1) both;
+    transform-origin: 50% 42%;
+}
+
+@keyframes wo2-pop {
+    from {
+        opacity: 0;
+        transform: translateY(8px) scale(.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.wo2-header {
+    padding: 28px 28px 14px;
+    text-align: center;
+}
+
+#wo2-title {
+    margin: 6px 0 4px;
+    font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+    color: #fff;
+}
+
+.wo2-sub {
+    margin: 2px 0 10px;
+    color: #e2e8f0;
+}
+
+.wo2-steps {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 8px;
+}
+
+.wo2-steps .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #475569;
+    transition: background .25s, transform .25s;
+}
+
+.wo2-steps .dot.active {
+    background: var(--cta);
+    transform: scale(1.15);
+}
+
+.wo2-body {
+    padding: 12px 22px 26px;
+}
+
+.wo2-roles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.wo2-card {
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    min-height: 88px;
+}
+
+.wo2-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .25);
+    border-color: var(--cta);
+}
+
+.wo2-card.selected {
+    border-color: var(--cta);
+    box-shadow: 0 10px 28px rgba(255, 102, 0, .35);
+}
+
+.wo2-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.wo2-icon.student {
+    background: linear-gradient(135deg, #e0e7ff, #dbeafe);
+    color: #4f46e5;
+}
+
+.wo2-icon.staff {
+    background: linear-gradient(135deg, #e0f2fe, #dbeafe);
+    color: #0284c7;
+}
+
+.wo2-icon.guest {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    color: #b45309;
+}
+
+.wo2-card-txt {
+    display: grid;
+    place-items: center;
+}
+
+.wo2-card-txt strong {
+    color: #fff;
+    margin: 0;
+}
+
+.wo2-form {
+    display: grid;
+    gap: 10px;
+}
+
+.wo2-label {
+    color: #fff;
+    font-weight: 600;
+}
+
+.wo2-input {
+    height: 46px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    padding: 0 12px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+}
+
+.wo2-input:focus {
+    border-color: var(--cta);
+    box-shadow: 0 0 0 4px rgba(255, 102, 0, .25);
+}
+
+.wo2-error {
+    color: #fca5a5;
+    font-size: .9rem;
+}
+
+.wo2-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 6px;
+}
+
+.wo2-hint {
+    color: #e2e8f0;
+    font-size: .9rem;
+}
+
+.wo2-btn {
+    height: 42px;
+    padding: 0 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform .05s ease, filter .18s ease;
+}
+
+.wo2-btn:active {
+    transform: translateY(1px);
+}
+
+.wo2-btn.primary {
+    background: var(--cta);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(255, 102, 0, 0.35);
+}
+
+.wo2-btn.primary:hover {
+    filter: brightness(1.05);
+}
+
+.wo2-btn.ghost {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.wo2-btn.big {
+    height: 56px;
+    padding: 0 22px;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 24px rgba(255, 102, 0, .22);
+}
+
+.wo2-btn.big:hover {
+    filter: brightness(1.06);
+}
+
+.wo2-final {
+    text-align: center;
+    padding: 6px 6px 8px;
+}
+
+.wo2-emoji {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    animation: wo2-bounce 800ms ease;
+}
+
+@keyframes wo2-bounce {
+    0% {
+        transform: translateY(-6px);
+    }
+
+    40% {
+        transform: translateY(0);
+    }
+
+    70% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.wo2-final-title {
+    margin: 6px 0 6px;
+    color: #fff;
+}
+
+.wo2-final-sub {
+    color: #e2e8f0;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 680px) {
+    .wo2-roles {
+        grid-template-columns: 1fr;
+    }
+
+    .wo2-dialog {
+        width: min(560px, 95vw);
+    }
+}

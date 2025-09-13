@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "q": "Do I need to sign in to register?",
+    "a": "No backend is used. The registration page is a static demo form per SRS."
+  },
+  {
+    "id": 2,
+    "q": "Where does event data come from?",
+    "a": "All content is read from local JSON files in /public/data."
+  },
+  {
+    "id": 3,
+    "q": "Can I bookmark events?",
+    "a": "Yes, bookmarks are stored locally in your browser."
+  },
+  {
+    "id": 4,
+    "q": "Is the feedback form functional?",
+    "a": "It’s a UI-only element as specified in the SRS."
+  },
+  {
+    "id": 5,
+    "q": "How do I find department-specific events?",
+    "a": "Use the category pills, search bar, or go to the Events page filters."
+  }
+]

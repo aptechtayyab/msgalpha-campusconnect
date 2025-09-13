@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Google",
+    "logo": "/images/uni-logo-one.png"
+  },
+  {
+    "id": 2,
+    "name": "Microsoft",
+    "logo": "/images/uni-logo-two.png"
+  },
+  {
+    "id": 3,
+    "name": "Intel",
+    "logo": "/images/uni-logo-three.png"
+  },
+  {
+    "id": 4,
+    "name": "NVIDIA",
+    "logo": "/images/uni-logo-four.png"
+  },
+  {
+    "id": 5,
+    "name": "Adobe",
+    "logo": "/images/uni-logo-five.png"
+  },
+  {
+    "id": 6,
+    "name": "Red Bull",
+    "logo": "/images/uni-logo-six.png"
+  },
+  {
+    "id": 7,
+    "name": "Logitech",
+    "logo": "/images/uni-logo-seven.png"
+  },
+  {
+    "id": 8,
+    "name": "Sennheiser",
+    "logo": "/images/uni-logo-eight.png"
+  }
+]

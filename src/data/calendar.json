@@ -1,0 +1,76 @@
+[
+  {
+    "month": "January",
+    "items": [
+      { "id": "anl-day", "title": "Annual Day", "date": "2025-01-22" }
+    ]
+  },
+  {
+    "month": "February",
+    "items": [
+      { "id": "music-night", "title": "Music Night", "date": "2025-02-17" },
+      { "id": "coding-meetup", "title": "Coding Meetup", "date": "2025-02-24" }
+    ]
+  },
+  {
+    "month": "March",
+    "items": [
+      { "id": "techfest", "title": "TechFest", "date": "2025-03-20" }
+    ]
+  },
+  {
+    "month": "April",
+    "items": [
+      { "id": "project-exhibit", "title": "Project Exhibit", "date": "2025-04-10" }
+    ]
+  },
+  {
+    "month": "May",
+    "items": [
+      { "id": "blood-drive", "title": "Blood Donation Drive", "date": "2025-05-14" }
+    ]
+  },
+  {
+    "month": "June",
+    "items": []
+  },
+  {
+    "month": "July",
+    "items": [
+      { "id": "hackathon", "title": "24h Hackathon", "date": "2025-07-26" }
+    ]
+  },
+  {
+    "month": "August",
+    "items": [
+      { "id": "cultural-week", "title": "Cultural Week", "date": "2025-08-05" },
+      { "id": "photowalk", "title": "Photo Walk", "date": "2025-08-21" },
+      { "id": "ai-seminar", "title": "AI Seminar", "date": "2025-08-28" }
+    ]
+  },
+  {
+    "month": "September",
+    "items": [
+      { "id": "sports-meet", "title": "Inter-College Sports Meet", "date": "2025-09-15" }
+    ]
+  },
+  {
+    "month": "October",
+    "items": [
+      { "id": "robotics", "title": "Robotics Championship", "date": "2025-10-12" },
+      { "id": "startup-talk", "title": "Startup Talk", "date": "2025-10-25" }
+    ]
+  },
+  {
+    "month": "November",
+    "items": [
+      { "id": "drama-night", "title": "Drama Night", "date": "2025-11-18" }
+    ]
+  },
+  {
+    "month": "December",
+    "items": [
+      { "id": "alumni-meet", "title": "Alumni Meet", "date": "2025-12-07" }
+    ]
+  }
+]

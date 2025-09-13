@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Robotics Club Launches",
+    "excerpt": "New robotics club inaugurated with hands-on demos.",
+    "date": "Aug 30, 2025",
+    "read": 3,
+    "image": "/images/robotics-club-launches.png",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "Cultural Week Highlights",
+    "excerpt": "Dance, drama and food streets stole the show.",
+    "date": "Aug 18, 2025",
+    "read": 4,
+    "image": "/images/cultural-week-highlights.png",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "Fixtures Announced",
+    "excerpt": "Inter-college sports fixtures for the season are live.",
+    "date": "Aug 12, 2025",
+    "read": 2,
+    "image": "/images/fixtures-announced.png",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "Intro to Generative AI",
+    "excerpt": "Workshop by senior mentors from AI Club next month.",
+    "date": "Aug 02, 2025",
+    "read": 3,
+    "image": "/images/intro-to-generative-ai.png",
+    "link": "#"
+  }
+]

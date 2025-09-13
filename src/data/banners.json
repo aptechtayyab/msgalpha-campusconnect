@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "image": "/images/banner1.jpg",
+    "caption": "Welcome to CampusConnect"
+  },
+  {
+    "id": 2,
+    "image": "/images/banner2.jpg",
+    "caption": "Stay Updated, Stay Involved!"
+  },
+  {
+    "id": 3,
+    "image": "/images/banner3.jpg",
+    "caption": "Explore Exciting Campus Events"
+  }
+]

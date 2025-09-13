@@ -1,0 +1,21 @@
+{
+    "headline": "Welcome to CampusConnect",
+    "subtitle": "Let’s set you up in a few seconds.",
+    "roles": [
+        {
+            "id": "student",
+            "label": "Student",
+            "subtitle": "Find events for students"
+        },
+        {
+            "id": "staff",
+            "label": "Staff",
+            "subtitle": "Department updates & tools"
+        },
+        {
+            "id": "guest",
+            "label": "Guest",
+            "subtitle": "See what’s happening on campus"
+        }
+    ]
+}

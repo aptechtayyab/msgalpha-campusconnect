@@ -1,0 +1,249 @@
+.event-detail {
+  --dark: #2F2F2F;
+  --light: #FFFFFF;
+  --ink: #111111;
+  --muted: #6b7280;
+  --yellow: #FEBF08;
+  --orange: #FA6803;
+  --lineL: #e5e7eb;
+  --lineD: #3a3a3a;
+  color: var(--ink);
+  background: var(--light);
+}
+
+.event-detail .container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.event-detail .grid {
+  display: grid;
+  gap: 16px;
+}
+
+.event-detail .grid.two {
+  grid-template-columns: 1.4fr 1fr;
+}
+
+@media (max-width:900px) {
+  .event-detail .grid.two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.event-detail .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  text-decoration: none;
+  color: #111;
+  background: linear-gradient(180deg, var(--yellow), #ffd755);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .12);
+}
+
+.event-detail .btn.ghost {
+  background: #fff;
+  border: 1px solid var(--lineL);
+}
+
+.event-detail .btn.tiny {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.event-detail .band {
+  padding: 32px 0;
+}
+
+.event-detail .hero {
+  width: 100%;
+  min-height: 340px;
+  background: #0f0f0f center/cover no-repeat;
+  position: relative;
+}
+
+.event-detail .shade {
+  background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .45));
+  min-height: 340px;
+  display: grid;
+  align-items: end;
+}
+
+.event-detail .hero-inner {
+  color: #fff;
+  padding: 28px 0;
+}
+
+.event-detail .hero-inner .badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.event-detail .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .8rem;
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: rgba(255, 255, 255, .12);
+  backdrop-filter: blur(4px);
+}
+
+.event-detail .badge.dept {
+  opacity: .95;
+}
+
+.event-detail .badge.cat.academic {
+  background: rgba(0, 123, 255, .2);
+}
+
+.event-detail .badge.cat.cultural {
+  background: rgba(250, 104, 3, .25);
+}
+
+.event-detail .badge.cat.sports {
+  background: rgba(16, 185, 129, .22);
+}
+
+.event-detail .badge.cat.departmental {
+  background: rgba(255, 255, 255, .18);
+}
+
+.event-detail h1 {
+  margin: 0 0 4px;
+  font-size: clamp(26px, 4vw, 46px);
+  text-shadow: 0 14px 30px rgba(0, 0, 0, .5);
+}
+
+.event-detail .when {
+  margin: 0;
+  font-weight: 800;
+}
+
+.event-detail .where {
+  margin: .2rem 0 0;
+}
+
+.event-detail .hero-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.event-detail .content .lead {
+  color: #374151;
+  font-weight: 600;
+}
+
+.event-detail .gallery-title {
+  margin: 18px 0 8px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.event-detail .gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  .event-detail .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .event-detail .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.event-detail .gallery-item {
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--lineL);
+}
+
+.event-detail .gallery img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+  transition: transform .25s ease;
+}
+
+.event-detail .gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+.event-detail .info-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (max-width:640px) {
+  .event-detail .info-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.event-detail .info {
+  background: #fff;
+  border: 1px solid var(--lineL);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.event-detail .info .lbl {
+  display: block;
+  color: #6b7280;
+  font-size: .85rem;
+}
+
+.event-detail .info .val {
+  font-weight: 800;
+}
+
+.event-detail .sidebar .card {
+  background: #fff;
+  border: 1px solid var(--lineL);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.event-detail .sidebar .card h3 {
+  margin: 0 0 8px;
+}
+
+.event-detail .sidebar .card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.event-detail .sidebar .card a {
+  text-decoration: none;
+  color: #111;
+}
+
+.event-detail .sidebar .card a:hover {
+  text-decoration: underline;
+}
