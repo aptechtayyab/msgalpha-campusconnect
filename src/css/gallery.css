@@ -30,7 +30,6 @@
   color: #fff;
   padding: 40px 16px;
   background: linear-gradient(180deg, rgba(0, 0, 0, .25), rgba(0, 0, 0, .35));
-  /* width: 100%; */
 }
 
 .gallery-page .gal-overlay h1 {
@@ -43,15 +42,13 @@
   padding: 24px 0;
   background: #fff;
   box-shadow: 0 6px 22px rgba(0, 0, 0, .06);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  overflow-x: hidden;
 }
 
 .gallery-page .ctrl-row {
   display: grid;
   gap: 10px;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 @media (max-width: 860px) {
@@ -64,6 +61,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
 }
 
 .gallery-page label {
@@ -76,13 +74,30 @@
   border: 1px solid var(--lineL);
   border-radius: 10px;
   outline: none;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.gallery-page .dual-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .gallery-page .dual-inputs {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gallery-page .seg {
-  display: inline-flex;
+  display: flex;
   border: 1px solid var(--lineL);
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
+  min-width: 0;
 }
 
 .gallery-page .seg-btn {
@@ -90,6 +105,9 @@
   border: none;
   padding: 10px 12px;
   cursor: pointer;
+  flex: 1;
+  text-align: center;
+  min-width: 0;
 }
 
 .gallery-page .seg-btn.active {
@@ -303,6 +321,7 @@
   margin-top: 6px;
   display: flex;
   gap: 8px;
+  flex-wrap: true;
   flex-wrap: wrap;
 }
 

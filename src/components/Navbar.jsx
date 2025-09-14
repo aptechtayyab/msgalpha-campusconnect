@@ -36,14 +36,14 @@ export default function Navbar() {
     <nav className="navbar" role="navigation" aria-label="Main Navigation">
       <div className="logo">
         <Link to="/" onClick={closeAll} className="logo-link" aria-label="CampusConnect Home">
-          <span className="logo-mark"><img src="./logo.png" width={50} alt="" /></span>
+          <span className="logo-mark"><img src="/logo.png" width={40} height={40} alt="" /></span>
           <span>CampusConnect</span>
         </Link>
       </div>
 
       <button
         className={`toggle ${open ? "open" : ""}`}
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => setOpen(v => !v)}
         aria-label="Toggle menu"
         aria-expanded={open ? "true" : "false"}
         aria-controls="primary-nav"
@@ -63,7 +63,6 @@ export default function Navbar() {
         <li><Link to="/feedback" onClick={closeAll}>Feedback</Link></li>
         <li><Link to="/bookmarks" onClick={closeAll}>Bookmarks</Link></li>
         <li><Link to="/contact" onClick={closeAll}>Contact Us</Link></li>
-
         <li className="hide-on-desktop mobile-bottom">
           <Link to="/registration" className="cta" onClick={closeAll}>Registration</Link>
         </li>

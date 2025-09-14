@@ -26,7 +26,7 @@ const niceDate = (iso) =>
   new Date(iso).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
 
 export default function Feedback() {
-  UseTitle("CampusConnect - Feedback")
+  UseTitle("CampusConnect - Feedback");
   const allEvents = Array.isArray(eventsData) ? eventsData : eventsData?.events || [];
   const recentPastEvents = useMemo(
     () =>

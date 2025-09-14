@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/events.css";
-
 import eventsAll from "../data/events.json";
 import { useBookmarks } from "../context/BookmarkContext.jsx";
 import UseTitle from "../hooks/UseTitle.jsx";
@@ -42,7 +42,7 @@ function cover(ev) {
 }
 
 export default function Events() {
-  UseTitle("CampusConnect - Events")
+  UseTitle("CampusConnect - Events");
   const [query, setQuery] = useState("");
   const [cat, setCat] = useState("All");
   const [sort, setSort] = useState("date-asc");
@@ -211,7 +211,7 @@ export default function Events() {
                 </div>
 
                 <div className="ev-actions">
-                  <a className="btn tiny" href={`/eventdetails/${ev.id}`}>Learn More</a>
+                  <Link className="btn tiny" to={`/events/${ev.id}`}>Learn More</Link>
                 </div>
               </article>
             );

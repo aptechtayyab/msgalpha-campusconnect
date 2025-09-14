@@ -34,28 +34,21 @@ export default function Banner({ slides }) {
       .catch(() => {});
   }, [slides]);
 
-  // Keep greeting in sync:
   useEffect(() => {
     const update = () => setUser(readUser());
-    update(); // initial
-    // If your onboarding dispatches this after saving, we'll update instantly
+    update();
     const onCustom = () => update();
     window.addEventListener("cc-user-updated", onCustom);
     return () => window.removeEventListener("cc-user-updated", onCustom);
   }, []);
 
-  // Also refresh user when the slide changes (covers same-tab localStorage updates)
   useEffect(() => {
     setUser(readUser());
   }, [idx]);
 
-  // Robust auto-advance (setTimeout per tick prevents stale closures)
   useEffect(() => {
     if (!banners.length || banners.length < 2) return;
-    const t = setTimeout(
-      () => setIdx((p) => (p + 1) % banners.length),
-      6000
-    );
+    const t = setTimeout(() => setIdx((p) => (p + 1) % banners.length), 6000);
     return () => clearTimeout(t);
   }, [idx, banners.length]);
 
@@ -78,9 +71,7 @@ export default function Banner({ slides }) {
                 <h2 className="bs-title">
                   {showGreeting || b.caption || "Stay Updated, Stay Involved!"}
                 </h2>
-                <p className="bs-sub">
-                  Event Hub – discover tech fests, cultural nights and more.
-                </p>
+                <p className="bs-sub">Event Hub – discover tech fests, cultural nights and more.</p>
                 <a href="/events" className="bs-cta">Explore Events</a>
               </div>
             </div>

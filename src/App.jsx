@@ -30,15 +30,14 @@ function AppShell() {
   return (
     <BookmarkProvider>
       {IS_HARD_LOAD && onHome && <WelcomeOnboarding />}
-    <ScrollToTop smooth/>
+      <ScrollToTop smooth/>
       <Navbar />
-
       <main className="app-main">
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/events" element={<Events />} />
-            <Route path="/eventdetails/:id" element={<EventDetail />} />
+            <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -50,7 +49,6 @@ function AppShell() {
           </Routes>
         </Suspense>
       </main>
-
       <Footer />
     </BookmarkProvider>
   );

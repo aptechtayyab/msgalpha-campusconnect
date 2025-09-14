@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import "../css/contact.css";
+import "../css/Contact.css";
 import directory from "../data/coordinators.json";
 import UseTitle from "../hooks/UseTitle";
 

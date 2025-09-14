@@ -170,7 +170,7 @@ export default function Home() {
                     {ev.date} • {ev.venue}
                   </p>
                   <p className="desc">{ev.shortDescription || ev.description}</p>
-                  <a href={`/eventdetails/${ev.id}`} className="btn tiny ghost">
+                  <a href={`/events/${ev.id}`} className="btn tiny ghost">
                     Learn More
                   </a>
                 </div>
@@ -250,7 +250,7 @@ export default function Home() {
                 {nextEvent.date} • {nextEvent.venue}
               </p>
               <p className="muted">{nextEvent.shortDescription || nextEvent.description}</p>
-              <a href={`/eventdetails/${nextEvent.id}`} className="btn tiny ghost">
+              <a href={`/events/${nextEvent.id}`} className="btn tiny ghost">
                 View details
               </a>
             </div>

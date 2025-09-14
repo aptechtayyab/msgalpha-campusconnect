@@ -5,7 +5,7 @@ export default function ScrollToTop({ smooth = false }) {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
+    if (hash && hash.startsWith("#") && hash.length > 1 && !hash.includes("/")) {
       const el = document.querySelector(hash);
       if (el) {
         setTimeout(() => {

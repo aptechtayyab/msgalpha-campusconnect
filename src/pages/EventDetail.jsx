@@ -13,15 +13,10 @@ function toDT(ev) {
 function formatRange(ev) {
   const d = new Date(ev.date?.replace(/-/g, "/"));
   if (isNaN(d)) return ev.date || "";
-  const dd = d.toLocaleDateString(undefined, {
-    day: "2-digit",
-    month: "short",
-    year: "numeric",
-  });
+  const dd = d.toLocaleDateString(undefined, { day: "2-digit", month: "short", year: "numeric" });
   const t1 = ev.startTime ? new Date(`${ev.date} ${ev.startTime}`) : null;
   const t2 = ev.endTime ? new Date(`${ev.date} ${ev.endTime}`) : null;
-  const fmt = (x) =>
-    x?.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }).replace(" ", "");
+  const fmt = (x) => x?.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }).replace(" ", "");
   if (t1 && t2) return `${dd}, ${fmt(t1)} – ${fmt(t2)}`;
   if (t1) return `${dd}, ${fmt(t1)}`;
   return dd;
@@ -35,6 +30,7 @@ export default function EventDetail() {
     if (byNum) return byNum;
     return events.find((e) => (e.slug ? String(e.slug) : "") === String(id));
   }, [id]);
+
   UseTitle(event ? `CampusConnect - ${event.title}` : "CampusConnect - Event Details");
 
   if (!event) {
@@ -60,15 +56,13 @@ export default function EventDetail() {
     .filter(Boolean)
     .filter((v, i, a) => a.indexOf(v) === i);
   const heroImg = images[0] || "/images/event-placeholder.jpg";
-
   const long = event.longDescription || event.description || "";
+
   return (
     <div className="event-detail">
       <section
         className="hero"
-        style={{
-          backgroundImage: `url(${heroImg})`,
-        }}
+        style={{ backgroundImage: `url(${heroImg})` }}
         aria-label={event.title}
       >
         <div className="shade">
@@ -144,8 +138,8 @@ export default function EventDetail() {
             <div className="card">
               <h3>Quick Links</h3>
               <ul>
-                <li><a href="/registration">Register Interest</a></li>
-                <li><a href="/about">About the College</a></li>
+                <li><Link to="/registration">Register Interest</Link></li>
+                <li><Link to="/about">About the College</Link></li>
                 <li><Link to="/events">Browse All Events</Link></li>
               </ul>
             </div>
