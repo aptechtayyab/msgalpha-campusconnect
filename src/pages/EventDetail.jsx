@@ -120,7 +120,7 @@ export default function EventDetail() {
         <div className="container grid two">
           <article className="content">
             <h2>About this event</h2>
-            <p className="lead">{event.shortDescription || ""}</p>
+            <p className="lead" style={{textAlign : 'justify'}}>{event.shortDescription || ""}</p>
             {long && <p>{long}</p>}
 
             {images.length > 0 && (

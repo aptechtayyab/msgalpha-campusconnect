@@ -36,7 +36,7 @@ function AppShell() {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/events" element={<Events />} />
+            <Route path="events" element={<Events />} />
             <Route path="/events/:id" element={<EventDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/about" element={<About />} />
