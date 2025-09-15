@@ -15,7 +15,13 @@ import UpcomingEvents from "../components/UpcomingEvents.jsx";
 import UseTitle from "../hooks/UseTitle.jsx";
 
 function cover(ev) {
-  return ev.image1 || ev.image2 || ev.image3 || ev.image4 || "/images/placeholder.jpg";
+  return (
+    ev.image1 ||
+    ev.image2 ||
+    ev.image3 ||
+    ev.image4 ||
+    "/images/placeholder.jpg"
+  );
 }
 
 export default function Home() {
@@ -75,8 +81,10 @@ export default function Home() {
 
     if (sortBy === "date-asc") list.sort((a, b) => d(a.date) - d(b.date));
     else if (sortBy === "date-desc") list.sort((a, b) => d(b.date) - d(a.date));
-    else if (sortBy === "title-asc") list.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
-    else if (sortBy === "title-desc") list.sort((a, b) => (b.title || "").localeCompare(a.title || ""));
+    else if (sortBy === "title-asc")
+      list.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+    else if (sortBy === "title-desc")
+      list.sort((a, b) => (b.title || "").localeCompare(a.title || ""));
 
     setFiltered(list.slice(0, 12));
   }, [query, category, sortBy]);
@@ -115,7 +123,9 @@ export default function Home() {
       <section className="section categories">
         <div className="container">
           <h2>Our Event Categories</h2>
-          <p className="muted">Filter by interest and find the perfect event for you.</p>
+          <p className="muted">
+            Filter by interest and find the perfect event for you.
+          </p>
 
           <div className="category-pills">
             {categories.map((c) => (
@@ -169,10 +179,12 @@ export default function Home() {
                   <p className="meta">
                     {ev.date} • {ev.venue}
                   </p>
-                  <p className="desc">{ev.shortDescription || ev.description}</p>
-                  <a href={`/events/${ev.id}`} className="btn tiny ghost">
+                  <p className="desc">
+                    {ev.shortDescription || ev.description}
+                  </p>
+                  <Link to={`/events/${ev.id}`} className="btn tiny ghost">
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -192,7 +204,9 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <h2>Upcoming Highlights</h2>
-            <p className="muted">Happening soon — plan ahead and register on time.</p>
+            <p className="muted">
+              Happening soon — plan ahead and register on time.
+            </p>
           </div>
           <UpcomingEvents limit={6} />
         </div>
@@ -234,8 +248,8 @@ export default function Home() {
           <div className="about-copy">
             <h2>About CampusConnect</h2>
             <p>
-              A centralized portal for students & faculty to browse, bookmark, and experience
-              everything the campus has to offer.
+              A centralized portal for students & faculty to browse, bookmark,
+              and experience everything the campus has to offer.
             </p>
             <a href="/about" className="btn brand">
               Learn more
@@ -249,7 +263,9 @@ export default function Home() {
               <p className="next-meta">
                 {nextEvent.date} • {nextEvent.venue}
               </p>
-              <p className="muted">{nextEvent.shortDescription || nextEvent.description}</p>
+              <p className="muted">
+                {nextEvent.shortDescription || nextEvent.description}
+              </p>
               <a href={`/events/${nextEvent.id}`} className="btn tiny ghost">
                 View details
               </a>
