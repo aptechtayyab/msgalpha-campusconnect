@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/banner.css";
 
 const NAME_KEY = "cc_user_name";
@@ -72,7 +73,7 @@ export default function Banner({ slides }) {
                   {showGreeting || b.caption || "Stay Updated, Stay Involved!"}
                 </h2>
                 <p className="bs-sub">Event Hub – discover tech fests, cultural nights and more.</p>
-                <a href="/events" className="bs-cta">Explore Events</a>
+                <Link to="/events" className="bs-cta">Explore Events</Link>
               </div>
             </div>
             <div className="bs-right">

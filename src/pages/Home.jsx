@@ -191,9 +191,9 @@ export default function Home() {
           </div>
 
           <div className="center">
-            <a href="/events" className="btn brand">
+            <Link to="/events" className="btn brand">
               View full catalog
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -251,9 +251,9 @@ export default function Home() {
               A centralized portal for students & faculty to browse, bookmark,
               and experience everything the campus has to offer.
             </p>
-            <a href="/about" className="btn brand">
+            <Link to="/about" className="btn brand">
               Learn more
-            </a>
+            </Link>
           </div>
 
           {nextEvent && (
@@ -266,9 +266,9 @@ export default function Home() {
               <p className="muted">
                 {nextEvent.shortDescription || nextEvent.description}
               </p>
-              <a href={`/events/${nextEvent.id}`} className="btn tiny ghost">
+              <Link to={`/events/${nextEvent.id}`} className="btn tiny ghost">
                 View details
-              </a>
+              </Link>
             </div>
           )}
         </div>

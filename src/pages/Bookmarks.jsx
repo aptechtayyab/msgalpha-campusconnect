@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
 import "../css/bookmarks.css";
 import { useBookmarks } from "../context/BookmarkContext.jsx";
 import eventsAll from "../data/events.json";
@@ -31,7 +32,7 @@ const Empty = () => (
   <div className="bm-empty">
     <h2>No bookmarks yet</h2>
     <p className="muted">Tap the bookmark icon on any event card to save it for this session.</p>
-    <a href="/events" className="btn tiny">Browse Events</a>
+    <Link to="/events" className="btn tiny">Browse Events</Link>
   </div>
 );
 
@@ -59,7 +60,7 @@ const Card = ({ ev, onRemove }) => {
         <p className="bm-venue">Venue: <strong>{ev.venue}</strong></p>
         <p className="bm-desc">{ev.shortDescription || ev.description}</p>
         <div className="bm-actions">
-          <a className="btn tiny" href={`/events/${ev.id}`}>Open</a>
+          <Link className="btn tiny" to={`/events/${ev.id}`}>Open</Link>
           <button type="button" className="btn tiny" onClick={() => onRemove(ev.id)}>Remove</button>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import "../css/about.css";
 
 import events from "../data/events.json";
@@ -9,8 +10,8 @@ import calendar from "../data/calendar.json";
 import UseTitle from "../hooks/UseTitle";
 
 export default function About() {
-  UseTitle("CampusConnect - About Us")
-    const monthCounts = useMemo(() => {
+  UseTitle("CampusConnect - About Us");
+  const monthCounts = useMemo(() => {
     const arr = Array(12).fill(0);
     events.forEach((e) => {
       const d = new Date((e.date || "").replace(/-/g, "/"));
@@ -34,8 +35,7 @@ export default function About() {
       if (!map[key]) map[key] = [];
       map[key].push(e);
     });
-
-    Object.values(map).forEach(list =>
+    Object.values(map).forEach((list) =>
       list.sort((a, b) => new Date(a.date) - new Date(b.date))
     );
     return map;
@@ -44,7 +44,10 @@ export default function About() {
   useEffect(() => {
     const sections = document.querySelectorAll(".about-page .band");
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((en) => en.isIntersecting && en.target.classList.add("band--in")),
+      (entries) =>
+        entries.forEach(
+          (en) => en.isIntersecting && en.target.classList.add("band--in")
+        ),
       { threshold: 0.12 }
     );
     sections.forEach((s) => io.observe(s));
@@ -69,8 +72,9 @@ export default function About() {
           <div>
             <h2>Who We Are</h2>
             <p>
-              <strong>XYZ College of Engineering</strong>, affiliated with <strong>ABC University</strong>, hosts a
-              dynamic calendar of technical, cultural, and sports events across the year.
+              <strong>XYZ College of Engineering</strong>, affiliated with{" "}
+              <strong>ABC University</strong>, hosts a dynamic calendar of
+              technical, cultural, and sports events across the year.
             </p>
             <ul className="ticks">
               <li>NAAC “A” accreditation; inter-college winners</li>
@@ -81,10 +85,18 @@ export default function About() {
           <aside className="callout">
             <h3>Quick Facts</h3>
             <ul>
-              <li><span>Location</span>Central City Campus</li>
-              <li><span>Affiliation</span>ABC University</li>
-              <li><span>Faculties</span>Engineering, Arts, Management</li>
-              <li><span>Students</span>5,000+</li>
+              <li>
+                <span>Location</span>Central City Campus
+              </li>
+              <li>
+                <span>Affiliation</span>ABC University
+              </li>
+              <li>
+                <span>Faculties</span>Engineering, Arts, Management
+              </li>
+              <li>
+                <span>Students</span>5,000+
+              </li>
             </ul>
           </aside>
         </div>
@@ -97,15 +109,24 @@ export default function About() {
           <div className="grid three cards">
             <article className="card">
               <h3>Student Council</h3>
-              <p>Leads flagship events, sponsors outreach, and cross-department coordination.</p>
+              <p>
+                Leads flagship events, sponsors outreach, and
+                cross-department coordination.
+              </p>
             </article>
             <article className="card">
               <h3>Departments</h3>
-              <p>Host seminars, workshops, exhibitions, and academic competitions.</p>
+              <p>
+                Host seminars, workshops, exhibitions, and academic
+                competitions.
+              </p>
             </article>
             <article className="card">
               <h3>Clubs & Societies</h3>
-              <p>Cultural performances, hackathons, sports leagues, media & photography, and more.</p>
+              <p>
+                Cultural performances, hackathons, sports leagues, media &
+                photography, and more.
+              </p>
             </article>
           </div>
         </div>
@@ -154,7 +175,9 @@ export default function About() {
             {process.map((s) => (
               <article className="node" key={s.id} role="listitem">
                 <div className="dot">
-                  <span className="ico" aria-hidden="true">{s.icon}</span>
+                  <span className="ico" aria-hidden="true">
+                    {s.icon}
+                  </span>
                 </div>
                 <h3 className="node-title">{s.title}</h3>
                 <p className="node-text">{s.text}</p>
@@ -171,7 +194,7 @@ export default function About() {
           <p className="muted">How events are distributed across the year.</p>
 
           <div className="timeline-wrap">
-            {["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m, i) => {
+            {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((m, i) => {
               const count = monthCounts[i];
               const pct = Math.min(100, count * 18);
               return (
@@ -202,7 +225,10 @@ export default function About() {
               </thead>
               <tbody>
                 {calendar.map((m) => {
-                  const items = m.items && m.items.length ? m.items : [{ id: `${m.month}-na`, title: "—", date: "—" }];
+                  const items =
+                    m.items && m.items.length
+                      ? m.items
+                      : [{ id: `${m.month}-na`, title: "—", date: "—" }];
                   const span = items.length;
                   return items.map((it, idx) => (
                     <tr key={`${m.month}-${it.id}`}>
@@ -216,7 +242,9 @@ export default function About() {
                       </td>
                       <td className="date-cell">
                         <span className="date-chip">
-                          {it.date !== "—" ? new Date(it.date.replace(/-/g, "/")).toDateString() : "—"}
+                          {it.date !== "—"
+                            ? new Date(it.date.replace(/-/g, "/")).toDateString()
+                            : "—"}
                         </span>
                       </td>
                     </tr>
@@ -257,10 +285,16 @@ export default function About() {
                   </div>
                   <div className="cat-info">
                     <h3>{ev.title}</h3>
-                    <p className="meta">{ev.department} • {ev.venue}</p>
-                    <p className="desc">{ev.shortDescription || ev.description}</p>
+                    <p className="meta">
+                      {ev.department} • {ev.venue}
+                    </p>
+                    <p className="desc">
+                      {ev.shortDescription || ev.description}
+                    </p>
                   </div>
-                  <a className="btn tiny" href={`/events/${ev.id}`}>View</a>
+                  <Link className="btn tiny" to={`/events/${ev.id}`}>
+                    View
+                  </Link>
                 </article>
               );
             })}
@@ -273,10 +307,22 @@ export default function About() {
 
       <section className="band band--dark stats">
         <div className="container grid four">
-          <div className="stat"><strong>{total}</strong><span>Total Events</span></div>
-          <div className="stat"><strong>{departments}</strong><span>Departments</span></div>
-          <div className="stat"><strong>{organizers}</strong><span>Organizers</span></div>
-          <div className="stat"><strong>100%</strong><span>Student-first</span></div>
+          <div className="stat">
+            <strong>{total}</strong>
+            <span>Total Events</span>
+          </div>
+          <div className="stat">
+            <strong>{departments}</strong>
+            <span>Departments</span>
+          </div>
+          <div className="stat">
+            <strong>{organizers}</strong>
+            <span>Organizers</span>
+          </div>
+          <div className="stat">
+            <strong>100%</strong>
+            <span>Student-first</span>
+          </div>
         </div>
       </section>
 
@@ -285,7 +331,9 @@ export default function About() {
           <h2>Our Partners</h2>
           <ul className="logo-row">
             {sponsors.map((s) => (
-              <li key={s.id}><img src={s.logo} alt={s.name} /></li>
+              <li key={s.id}>
+                <img src={s.logo} alt={s.name} />
+              </li>
             ))}
           </ul>
         </div>
@@ -295,7 +343,10 @@ export default function About() {
         <div className="container grid two">
           <div>
             <h2>Get In Touch</h2>
-            <p className="muted">For collaborations or sponsorships, reach out to our key coordinators.</p>
+            <p className="muted">
+              For collaborations or sponsorships, reach out to our key
+              coordinators.
+            </p>
             <ul className="mini-contacts">
               {contacts.slice(0, 3).map((c) => (
                 <li key={c.id}>
@@ -308,7 +359,9 @@ export default function About() {
           <aside className="cta-card">
             <h3>Join the Experience</h3>
             <p>Showcase your brand or expertise at our flagship events.</p>
-            <a href="/registration" className="btn">Register Interest</a>
+            <Link to="/registration" className="btn">
+              Register Interest
+            </Link>
           </aside>
         </div>
       </section>

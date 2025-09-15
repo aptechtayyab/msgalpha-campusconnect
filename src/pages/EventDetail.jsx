@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useState, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import "../css/EventDetail.css";
 import events from "../data/events.json";
@@ -58,6 +58,40 @@ export default function EventDetail() {
   const heroImg = images[0] || "/images/event-placeholder.jpg";
   const long = event.longDescription || event.description || "";
 
+  const [lbOpen, setLbOpen] = useState(false);
+  const [lbIndex, setLbIndex] = useState(0);
+
+  const openAt = useCallback((i) => {
+    setLbIndex(i);
+    setLbOpen(true);
+  }, []);
+
+  const closeLb = useCallback(() => setLbOpen(false), []);
+
+  const prev = useCallback(() => {
+    setLbIndex((p) => (p - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  const next = useCallback(() => {
+    setLbIndex((p) => (p + 1) % images.length);
+  }, [images.length]);
+
+  useEffect(() => {
+    if (!lbOpen) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") closeLb();
+      else if (e.key === "ArrowLeft") prev();
+      else if (e.key === "ArrowRight") next();
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [lbOpen, closeLb, prev, next]);
+
   return (
     <div className="event-detail">
       <section
@@ -94,9 +128,15 @@ export default function EventDetail() {
                 <h3 className="gallery-title">Image Gallery</h3>
                 <div className="gallery">
                   {images.map((src, idx) => (
-                    <a key={idx} href={src} className="gallery-item" target="_blank" rel="noreferrer">
+                    <button
+                      key={idx}
+                      type="button"
+                      className="gallery-item"
+                      onClick={() => openAt(idx)}
+                      aria-label={`Open image ${idx + 1} of ${images.length}`}
+                    >
                       <img src={src} alt={`${event.title} photo ${idx + 1}`} loading="lazy" />
-                    </a>
+                    </button>
                   ))}
                 </div>
               </>
@@ -146,6 +186,28 @@ export default function EventDetail() {
           </aside>
         </div>
       </section>
+
+      {lbOpen && images.length > 0 && (
+        <div
+          className="ed-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image gallery"
+          onClick={closeLb}
+        >
+          <div className="ed-lb-body" onClick={(e) => e.stopPropagation()}>
+            <button className="ed-lb-close" type="button" onClick={closeLb} aria-label="Close">✕</button>
+            {images.length > 1 && (
+              <>
+                <button className="ed-lb-prev" type="button" onClick={prev} aria-label="Previous image">‹</button>
+                <button className="ed-lb-next" type="button" onClick={next} aria-label="Next image">›</button>
+                <div className="ed-lb-counter">{lbIndex + 1} / {images.length}</div>
+              </>
+            )}
+            <img className="ed-lb-img" src={images[lbIndex]} alt={`${event.title} large image`} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
